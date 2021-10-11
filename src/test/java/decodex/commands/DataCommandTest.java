@@ -41,6 +41,3 @@ public class DataCommandTest {
         assertTrue(Arrays.equals(dataManager.getOriginalData().getRawBytes(), testData.getRawBytes()));
     }
 }
-
-
-
