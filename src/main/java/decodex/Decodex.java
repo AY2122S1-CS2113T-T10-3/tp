@@ -35,6 +35,11 @@ public class Decodex {
             + "| |_| | |_| |   <  __/\n"
             + "|____/ \\__,_|_|\\_\\___|\n";
 
+    public Decodex() {
+        printGreeting();
+        initDecodex();
+    }
+
     /**
      * Initializes the necessary Objects for Decodex.
      */
@@ -50,9 +55,10 @@ public class Decodex {
      * Decodex entry-point for the java.decodex.Decodex application.
      */
     public static void main(String[] args) {
-        printGreeting();
-        initDecodex();
+        new Decodex().run();
+    }
 
+    public void run() {
         Command command = null;
 
         do {
@@ -62,7 +68,8 @@ public class Decodex {
             try {
                 command = parser.parseCommand(userInput);
                 command.run(dataManager, moduleManager, ui);
-            } catch (ParserException | CommandException | UnknownModuleException | DataManagerException | ModuleException err) {
+            } catch (ParserException | CommandException | UnknownModuleException
+                    | DataManagerException | ModuleException err) {
                 printErrorMessage(err.getMessage());
             }
         } while (!(command instanceof ExitCommand));

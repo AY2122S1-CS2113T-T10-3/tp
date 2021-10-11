@@ -1,9 +1,10 @@
 package decodex.modules.base64;
 
-import decodex.modules.BaseModule;
-import java.util.Base64;
-
 import decodex.data.Data;
+import decodex.data.exception.ModuleException;
+import decodex.modules.BaseModule;
+
+import java.util.Base64;
 
 /**
  * Base64Encoder serves to carry out the Base64 decoding operations.
@@ -27,11 +28,15 @@ public class Base64Decoder extends BaseModule {
      * @return The Data object of the Base64-decoded data.
      */
     @Override
-    public Data run(Data data) {
-        Data decodedData;
-        byte[] originalBytes = data.getRawBytes();
-        byte[] base64DecodedBytes = base64Decoder.decode(originalBytes);
-        decodedData = new Data(base64DecodedBytes);
-        return decodedData;
+    public Data run(Data data) throws ModuleException {
+        try {
+            Data decodedData;
+            byte[] originalBytes = data.getRawBytes();
+            byte[] base64DecodedBytes = base64Decoder.decode(originalBytes);
+            decodedData = new Data(base64DecodedBytes);
+            return decodedData;
+        } catch (IllegalArgumentException err) {
+            throw new ModuleException(ModuleException.BASE64_DECODING_FAILED_MESSAGE);
+        }
     }
 }

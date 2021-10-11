@@ -1,5 +1,9 @@
 whoami
 bring me thanos
-hi
+data I am a lab rat
+select base64encode
+select base64decode
+select hexencode
+reset
 bye
 exit

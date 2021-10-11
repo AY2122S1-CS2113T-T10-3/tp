@@ -1,11 +1,12 @@
 package decodex.parser;
 
 import decodex.commands.Command;
+import decodex.commands.DataCommand;
 import decodex.commands.ExitCommand;
-import decodex.data.DataManager;
-import decodex.modules.ModuleManager;
+import decodex.commands.ListCommand;
+import decodex.commands.ResetCommand;
+import decodex.commands.SelectCommand;
 import decodex.data.exception.ParserException;
-import decodex.ui.Ui;
 
 import java.util.Arrays;
 
@@ -15,9 +16,10 @@ import java.util.Arrays;
 public class Parser {
 
     /**
-     * Specifies the index of the tokens where command can be found.
+     * Specifies the index of the tokens where specific parameters can be found.
      */
     private static final int COMMAND_INDEX = 0;
+
 
     /**
      * Specifies the starting index where the arguments can be found.
@@ -37,34 +39,42 @@ public class Parser {
      * @return The type of command.
      */
     public String getCommandType(String userInput) throws ParserException {
-        userInput = userInput.strip();
-        if (userInput.isEmpty()) {
+        String strippedUserInput = userInput.stripLeading();
+        if (strippedUserInput.isEmpty()) {
             throw new ParserException(ParserException.MISSING_COMMAND_TYPE_MESSAGE);
         }
 
-        String[] tokens = userInput.split(" ");
+        String[] tokens = strippedUserInput.split(" ");
 
         boolean isInvalidTokensLength = tokens.length < VALID_TOKENS_LENGTH_FOR_COMMAND;
 
         if (isInvalidTokensLength) {
-            throw new ParserException(ParserException.WEIRD_COMMAND_TYPE_MESSAGE);
+            throw new ParserException(ParserException.MISSING_COMMAND_TYPE_MESSAGE);
         }
         return tokens[COMMAND_INDEX];
     }
 
     /**
-     * Returns the Argument portion of the user input.
+     * Returns the Argument portion of the user input as a whole string.
      *
      * @param userInput The input specified by the user.
-     * @return The argument portion of the user input.
+     * @return The argument portion of the user input as an array.
      */
-    public String[] getUserArguments(String userInput) throws ParserException {
-        String[] tokens = userInput.split(" ");
+    public String getUserArgument(String userInput) throws ParserException {
+        String strippedUserInput = userInput.stripLeading();
+        String[] tokens = strippedUserInput.split(" ", -1);
 
         if (tokens.length < VALID_TOKENS_LENGTH_FOR_ARGUMENTS) {
             throw new ParserException(ParserException.MISSING_COMMAND_ARGS_MESSAGE);
         }
-        return Arrays.copyOfRange(tokens, STARTING_ARGUMENTS_INDEX, tokens.length);
+        String[] argumentTokens = Arrays.copyOfRange(tokens, STARTING_ARGUMENTS_INDEX, tokens.length);
+
+        if (argumentTokens.length > 1) {
+            String joinedArguments = String.join(" ", argumentTokens);
+            return joinedArguments;
+        }
+        String singleArgument = argumentTokens[0];
+        return singleArgument;
     }
 
     /**
@@ -76,16 +86,79 @@ public class Parser {
      */
     public Command parseCommand(String userInput) throws ParserException {
         Command command;
-
         String commandType = getCommandType(userInput);
 
         switch (commandType) {
         case ExitCommand.COMMAND_WORD:
-            command = new ExitCommand();
+            command = craftExitCommand();
+            break;
+        case DataCommand.COMMAND_WORD:
+            command = craftDataCommand(userInput);
+            break;
+        case ListCommand.COMMAND_WORD:
+            command = craftListCommand();
+            break;
+        case ResetCommand.COMMAND_WORD:
+            command = craftResetCommand();
+            break;
+        case SelectCommand.COMMAND_WORD:
+            command = craftSelectCommand(userInput);
             break;
         default:
-            throw new ParserException(userInput + " !To be replaced with invalid command message!");
+            throw new ParserException("[-] Unknown command, please enter a valid command");
         }
         return command;
     }
+
+    /**
+     * Crafts and returns the Exit Command.
+     *
+     * @return The Exit command.
+     */
+    private Command craftExitCommand() {
+        return new ExitCommand();
+    }
+
+    /**
+     * Crafts and returns the Data Command given the user input.
+     *
+     * @param userInput The user input specified by the user.
+     * @return The Data command
+     * @throws ParserException ParserException
+     */
+    private Command craftDataCommand(String userInput) throws ParserException {
+        String arguments = getUserArgument(userInput);
+        return new DataCommand(arguments);
+    }
+
+    /**
+     * Crafts and returns the List Command.
+     *
+     * @return The List command.
+     */
+    private Command craftListCommand() {
+        return new ListCommand();
+    }
+
+    /**
+     * Crafts and returns the Reset Command.
+     *
+     * @return The Reset command.
+     */
+    private Command craftResetCommand() {
+        return new ResetCommand();
+    }
+
+    /**
+     * Crafts and returns the Select Command.
+     *
+     * @param userInput The user input specified by the user.
+     * @return The Select command.
+     * @throws ParserException ParserException
+     */
+    private Command craftSelectCommand(String userInput) throws ParserException {
+        String moduleName = getUserArgument(userInput);
+        return new SelectCommand(moduleName);
+    }
+
 }

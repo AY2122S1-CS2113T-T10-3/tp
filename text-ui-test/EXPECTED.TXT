@@ -5,8 +5,12 @@ Hello from
 | |_| | |_| |   <  __/
 |____/ \__,_|_|\_\___|
 
-Decodex > whoami !To be replaced with invalid command message!
-Decodex > bring me thanos !To be replaced with invalid command message!
-Decodex > hi !To be replaced with invalid command message!
-Decodex > bye !To be replaced with invalid command message!
+Decodex > [-] Unknown command, please enter a valid command
+Decodex > [-] Unknown command, please enter a valid command
+Decodex > [+] Input: I am a lab rat
+Decodex > [+] Output: SSBhbSBhIGxhYiByYXQ=
+Decodex > [+] Output: I am a lab rat
+Decodex > [+] Output: 4920616d2061206c616220726174
+Decodex > [+] Reverted all changes
+Decodex > [-] Unknown command, please enter a valid command
 Decodex > Goodbye!
