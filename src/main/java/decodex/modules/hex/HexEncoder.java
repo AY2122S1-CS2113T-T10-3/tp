@@ -31,6 +31,9 @@ public class HexEncoder extends BaseModule {
         }
 
         String encodedString = encodedStringBuilder.toString().trim();
+
+        assert !encodedString.isEmpty() : "encodedString is not supposed to be empty.";
+
         return new Data(encodedString);
     }
 }
