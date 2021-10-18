@@ -3,6 +3,7 @@ package decodex.commands;
 import decodex.data.DataManager;
 import decodex.modules.ModuleManager;
 import decodex.ui.Ui;
+import decodex.ui.messages.RegularMessages;
 
 public class ResetCommand extends Command {
 
@@ -16,6 +17,6 @@ public class ResetCommand extends Command {
     @Override
     public void run(DataManager dataManager, ModuleManager moduleManager, Ui ui) {
         dataManager.resetToOriginalData();
-        System.out.println("[+] Reverted all changes");
+        ui.printSuccess(RegularMessages.REVERTED_ALL_CHANGES);
     }
 }

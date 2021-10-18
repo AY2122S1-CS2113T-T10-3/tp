@@ -9,6 +9,7 @@ import decodex.data.exception.UnknownModuleException;
 import decodex.modules.Module;
 import decodex.modules.ModuleManager;
 import decodex.ui.Ui;
+import decodex.ui.messages.ErrorMessages;
 
 public class SelectCommand extends Command {
 
@@ -26,13 +27,13 @@ public class SelectCommand extends Command {
     public void run(DataManager dataManager, ModuleManager moduleManager, Ui ui)
             throws UnknownModuleException, CommandException, DataManagerException, ModuleException {
         if (moduleName.isBlank()) {
-            throw new CommandException("[-] Missing module name");
+            throw new CommandException(ErrorMessages.MISSING_MODULE_NAME);
         }
 
         Module module = moduleManager.selectModule(moduleName);
         Data newData = module.run(dataManager.getCurrentData());
         dataManager.setCurrentData(newData);
 
-        System.out.printf("[+] Output: \"%s\"\n", newData.toString());
+        ui.printOutput(newData.toString());
     }
 }

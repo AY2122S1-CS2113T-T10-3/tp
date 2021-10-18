@@ -37,7 +37,6 @@ public class ListCommand extends Command {
             moduleListString.append(String.format("  %-" + maxNameWidth + "s - %s\n", moduleName, moduleDescription));
         }
 
-        System.out.println("Here are the list of supported modules:");
-        System.out.println(moduleListString);
+        ui.printModuleList(moduleListString.toString());
     }
 }

@@ -2,7 +2,6 @@ package decodex.modules;
 
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.junit.jupiter.api.Assertions.fail;
 
 import decodex.data.exception.UnknownModuleException;
 import decodex.modules.base64.Base64Encoder;

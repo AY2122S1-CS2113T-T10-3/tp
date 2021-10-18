@@ -1,8 +1,8 @@
 package decodex.data;
 
-import java.util.Arrays;
-
 import decodex.data.exception.DataManagerException;
+import decodex.ui.messages.ErrorMessages;
+import java.util.Arrays;
 
 /**
  * The DataManager class handles the management of the current state of the data.
@@ -31,7 +31,7 @@ public class DataManager {
      */
     public Data getOriginalData() throws DataManagerException {
         if (originalData == null) {
-            throw new DataManagerException("No data found");
+            throw new DataManagerException(ErrorMessages.NO_DATA_FOUND);
         }
         return originalData;
     }
@@ -44,7 +44,7 @@ public class DataManager {
      */
     public Data getCurrentData() throws DataManagerException {
         if (currentData == null) {
-            throw new DataManagerException("No data found");
+            throw new DataManagerException(ErrorMessages.NO_DATA_FOUND);
         }
         return currentData;
     }
@@ -67,7 +67,7 @@ public class DataManager {
      */
     public void setCurrentData(Data currentData) throws DataManagerException {
         if (originalData == null) {
-            throw new DataManagerException("No data found");
+            throw new DataManagerException(ErrorMessages.NO_DATA_FOUND);
         }
         this.currentData = currentData;
     }

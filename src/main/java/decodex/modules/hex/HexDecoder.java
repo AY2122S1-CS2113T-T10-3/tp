@@ -3,6 +3,7 @@ package decodex.modules.hex;
 import decodex.data.Data;
 import decodex.data.exception.ModuleException;
 import decodex.modules.Module;
+import decodex.ui.messages.ErrorMessages;
 import java.util.Arrays;
 import java.util.stream.Collectors;
 
@@ -32,7 +33,7 @@ public class HexDecoder extends Module {
         String inputString = data.toString().toLowerCase();
 
         if (!isValidHex(inputString)) {
-            throw new ModuleException(ModuleException.HEX_DECODING_FAILED_MESSAGE);
+            throw new ModuleException(ErrorMessages.HEX_DECODING_FAILED_MESSAGE);
         }
 
         String decodedString = Arrays

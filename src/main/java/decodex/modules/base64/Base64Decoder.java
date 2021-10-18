@@ -3,7 +3,7 @@ package decodex.modules.base64;
 import decodex.data.Data;
 import decodex.data.exception.ModuleException;
 import decodex.modules.Module;
-
+import decodex.ui.messages.ErrorMessages;
 import java.util.Base64;
 
 /**
@@ -36,7 +36,7 @@ public class Base64Decoder extends Module {
             decodedData = new Data(base64DecodedBytes);
             return decodedData;
         } catch (IllegalArgumentException err) {
-            throw new ModuleException(ModuleException.BASE64_DECODING_FAILED_MESSAGE);
+            throw new ModuleException(ErrorMessages.BASE64_DECODING_FAILED_MESSAGE);
         }
     }
 }

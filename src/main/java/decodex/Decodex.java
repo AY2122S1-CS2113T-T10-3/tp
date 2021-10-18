@@ -6,12 +6,11 @@ import decodex.data.DataManager;
 import decodex.data.exception.CommandException;
 import decodex.data.exception.DataManagerException;
 import decodex.data.exception.ModuleException;
+import decodex.data.exception.ParserException;
 import decodex.data.exception.UnknownModuleException;
 import decodex.modules.ModuleManager;
 import decodex.parser.Parser;
-import decodex.data.exception.ParserException;
 import decodex.ui.Ui;
-
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -27,11 +26,9 @@ public class Decodex {
     private static DataManager dataManager;
     private static ModuleManager moduleManager;
     private static Parser parser;
-    private static Scanner in;
     private static Ui ui;
 
     public Decodex() {
-        printGreeting();
         initDecodex();
     }
 
@@ -43,7 +40,6 @@ public class Decodex {
         dataManager = new DataManager();
         moduleManager = new ModuleManager();
         parser = new Parser();
-        in = new Scanner(System.in);
         ui = new Ui();
     }
 
@@ -55,11 +51,12 @@ public class Decodex {
     }
 
     public void run() {
+        ui.printGreeting();
+
         Command command = null;
 
         do {
-            printPromptHeader();
-            String userInput = in.nextLine();
+            String userInput = ui.readInput();
             logger.fine("User input: " + userInput);
             try {
                 command = parser.parseCommand(userInput);
@@ -67,34 +64,9 @@ public class Decodex {
                 command.run(dataManager, moduleManager, ui);
             } catch (ParserException | CommandException | UnknownModuleException
                     | DataManagerException | ModuleException err) {
-                printErrorMessage(err.getMessage());
+                ui.printError(err);
                 logger.fine(err.getMessage());
             }
         } while (!(command instanceof ExitCommand));
-    }
-
-    /**
-     * Prints the greeting message.
-     */
-    public static void printGreeting() {
-        System.out.println("======================== Decodex ===========================\n"
-                + "Welcome to Decodex, transforming data with ease\n"
-                + "============================================================");
-    }
-
-    /**
-     * Prints the prompt header.
-     */
-    public static void printPromptHeader() {
-        System.out.print("Decodex > ");
-    }
-
-    /**
-     * Prints the handled error messages.
-     *
-     * @param errorMessage The respective error message.
-     */
-    public static void printErrorMessage(String errorMessage) {
-        System.out.println(errorMessage);
     }
 }
