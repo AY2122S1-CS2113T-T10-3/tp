@@ -7,6 +7,7 @@ import decodex.ui.Ui;
 public class ResetCommand extends Command {
 
     public static final String COMMAND_WORD = "reset";
+    public static final String COMMAND_DESCRIPTION = "Resets the transformed data back to the original input";
 
     public ResetCommand() {
         super();

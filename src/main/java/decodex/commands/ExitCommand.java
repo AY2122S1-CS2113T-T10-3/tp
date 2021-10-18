@@ -7,6 +7,7 @@ import decodex.ui.Ui;
 public class ExitCommand extends Command {
 
     public static final String COMMAND_WORD = "exit";
+    public static final String COMMAND_DESCRIPTION = "Exit the program";
 
     public ExitCommand() {
         super();

@@ -8,6 +8,7 @@ import decodex.ui.Ui;
 public class ListCommand extends Command {
 
     public static final String COMMAND_WORD = "list";
+    public static final String COMMAND_DESCRIPTION = "Shows a list of all available modules";
 
     public ListCommand() {
         super();

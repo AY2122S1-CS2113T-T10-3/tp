@@ -9,6 +9,7 @@ import decodex.ui.Ui;
 public class InputCommand extends Command {
 
     public static final String COMMAND_WORD = "input";
+    public static final String COMMAND_DESCRIPTION = "Stores the data to be processed by modules";
 
     private final String dataString;
 

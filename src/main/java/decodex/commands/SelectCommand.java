@@ -13,6 +13,7 @@ import decodex.ui.Ui;
 public class SelectCommand extends Command {
 
     public static final String COMMAND_WORD = "select";
+    public static final String COMMAND_DESCRIPTION = "Selects a module and processes the data accordingly";
 
     private final String moduleName;
 

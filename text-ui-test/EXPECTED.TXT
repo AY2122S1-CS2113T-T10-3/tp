@@ -8,5 +8,13 @@ Decodex > [+] Output: "SSBhbSBhIGxhYiByYXQ="
 Decodex > [+] Output: "I am a lab rat"
 Decodex > [+] Output: "4920616d2061206c616220726174"
 Decodex > [+] Reverted all changes
+Decodex > Here are the list of supported commands:
+  list   - Shows a list of all available modules
+  input  - Stores the data to be processed by modules
+  select - Selects a module and processes the data accordingly
+  reset  - Resets the transformed data back to the original input
+  help   - Shows a list of all available commands
+  exit   - Exit the program
+
 Decodex > [x] Unknown command, please enter a valid command
 Decodex > Goodbye!

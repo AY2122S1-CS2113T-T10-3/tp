@@ -1,6 +1,7 @@
 package decodex.parser;
 
 import decodex.commands.Command;
+import decodex.commands.HelpCommand;
 import decodex.commands.InputCommand;
 import decodex.commands.ExitCommand;
 import decodex.commands.ListCommand;
@@ -123,6 +124,9 @@ public class Parser {
         case SelectCommand.COMMAND_WORD:
             command = craftSelectCommand(userInput);
             break;
+        case HelpCommand.COMMAND_WORD:
+            command = craftHelpCommand();
+            break;
         default:
             throw new ParserException("[x] Unknown command, please enter a valid command");
         }
@@ -180,4 +184,12 @@ public class Parser {
         return new SelectCommand(moduleName);
     }
 
+    /**
+     * Prepares and returns the HelpCommand.
+     *
+     * @return The HelpCommand object.
+     */
+    private HelpCommand craftHelpCommand() {
+        return new HelpCommand();
+    }
 }
