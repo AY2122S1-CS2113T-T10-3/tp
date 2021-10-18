@@ -77,6 +77,17 @@ public class Ui {
     }
 
     /**
+     * Prints the list of available commands.
+     *
+     * @param commandList String of the list of available commands.
+     */
+    public void printCommandList(String commandList) {
+        assert commandList != null : "Command list should not be null";
+        assert !commandList.isBlank() : "Commmand list should not be empty";
+        System.out.println(RegularMessages.LIST_COMMANDS + "\n" + commandList);
+    }
+
+    /**
      * Prints a message with a success status icon.
      *
      * @param message Success message

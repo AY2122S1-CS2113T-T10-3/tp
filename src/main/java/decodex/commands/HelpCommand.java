@@ -9,8 +9,6 @@ public class HelpCommand extends Command {
     public static final String COMMAND_WORD = "help";
     private static final String COMMAND_DESCRIPTION = "Shows a list of all available commands";
 
-    private static final String LIST_COMMANDS = "Here are the list of supported commands:";
-
     private static final int COMMAND_WORD_INDEX = 0;
     private static final int COMMAND_DESCRIPTION_INDEX = 1;
 
@@ -51,17 +49,6 @@ public class HelpCommand extends Command {
                     commandWord, commandDescription));
         }
 
-        printCommandList(commandListString.toString());
-    }
-
-    /**
-     * Prints the list of available commands.
-     *
-     * @param commandList String of the list of available commands.
-     */
-    public void printCommandList(String commandList) {
-        assert commandList != null : "Command list should not be null";
-        assert !commandList.isBlank() : "Commmand list should not be empty";
-        System.out.println(LIST_COMMANDS + "\n" + commandList);
+        ui.printCommandList(commandListString.toString());
     }
 }
