@@ -1,0 +1,58 @@
+package decodex.commands;
+
+import decodex.data.DataManager;
+import decodex.data.exception.CommandException;
+import decodex.data.exception.ModuleException;
+import decodex.data.exception.RecipeManagerException;
+import decodex.modules.Module;
+import decodex.modules.ModuleManager;
+import decodex.recipes.Recipe;
+import decodex.recipes.RecipeManager;
+import decodex.ui.Ui;
+import decodex.ui.messages.RegularMessages;
+import java.util.ArrayList;
+
+public class RecipeListCommand extends Command {
+
+    public static final String COMMAND_WORD = "list";
+    private static final int ARRAY_INDEX_OFFSET = -1;
+
+    private final String recipeName;
+
+    public RecipeListCommand(String recipeName) {
+        super();
+        this.recipeName = recipeName;
+    }
+
+    @Override
+    public void run(DataManager dataManager, ModuleManager moduleManager, Ui ui, RecipeManager recipeManager)
+            throws CommandException, ModuleException, RecipeManagerException {
+        Recipe recipe;
+
+        if (recipeName.isBlank()) {
+            recipe = recipeManager.getEditingRecipe();
+        } else {
+            recipe = recipeManager.getRecipe(recipeName);
+        }
+
+        ui.printRecipeModulesList(prepareModuleList(recipe), recipe.getName());
+    }
+
+    private String prepareModuleList(Recipe recipe) {
+        ArrayList<Module> recipeModuleList = recipe.getModuleList();
+
+        if (recipeModuleList.isEmpty()) {
+            return RegularMessages.RECIPE_EMPTY;
+        }
+
+        String[] recipeModuleNames = recipeModuleList.stream().map(Module::getName).toArray(String[]::new);
+        StringBuilder recipeListString = new StringBuilder();
+
+        for (int index = 1; index <= recipeModuleNames.length; index++) {
+            recipeListString.append(String.format("%d. %s\n", index, recipeModuleNames[index + ARRAY_INDEX_OFFSET]));
+        }
+
+        return recipeListString.toString();
+    }
+
+}

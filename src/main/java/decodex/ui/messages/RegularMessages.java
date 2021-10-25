@@ -6,8 +6,9 @@ public class RegularMessages {
             + "Welcome to Decodex, transforming data with ease\n"
             + "============================================================";
     public static final String GOODBYE = "Goodbye!";
-    public static final String LIST_MODULES = "Here are the list of supported modules:";
-    public static final String LIST_RECIPES = "Here are the list of available recipes:";
+    public static final String LIST_MODULES = "Here is the list of supported modules:";
+    public static final String LIST_RECIPES = "Here is the list of available recipes:";
+    public static final String LIST_RECIPE_MODULES = "Here is the list of modules in recipe %s:";
     public static final String NO_RECIPES = "You do not have any recipes";
     public static final String REVERTED_ALL_CHANGES = "Reverted all changes";
     public static final String RECIPE_DELETED = "Recipe %s has been deleted";

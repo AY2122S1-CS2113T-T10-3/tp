@@ -71,7 +71,7 @@ public class ListCommand extends Command {
     }
 
     /**
-     * Prepares the list of available modules.
+     * Prepares the list of available recipes.
      *
      * @param recipeManager The RecipeManager to retrieve available recipes.
      * @return A formatted String of recipes.

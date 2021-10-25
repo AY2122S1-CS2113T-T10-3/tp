@@ -113,6 +113,20 @@ public class Ui {
     }
 
     /**
+     * Prints the list of modules in a recipe.
+     *
+     * @param moduleList The list of modules in the recipe.
+     * @param recipeName The name of the recipe.
+     */
+    public void printRecipeModulesList(String moduleList, String recipeName) {
+        assert moduleList != null : "Module list should not be null";
+        assert !moduleList.isBlank() : "Module list should not be empty";
+        assert recipeName != null : "Recipe name should not be null";
+        assert !recipeName.isBlank() : "Recipe name should not be empty";
+        System.out.println(String.format(RegularMessages.LIST_RECIPE_MODULES + "\n%s", recipeName, moduleList));
+    }
+
+    /**
      * Prints the message when a recipe is reset.
      *
      * @param recipeName The name of the recipe that was reset.
