@@ -35,10 +35,16 @@ public class RecipeListCommand extends Command {
             recipe = recipeManager.getRecipe(recipeName);
         }
 
-        ui.printRecipeModulesList(prepareModuleList(recipe), recipe.getName());
+        ui.printRecipeModulesList(getModuleList(recipe), recipe.getName());
     }
 
-    private String prepareModuleList(Recipe recipe) {
+    /**
+     * Gets and prepares an indexed list of the modules in the given recipe.
+     *
+     * @param recipe The recipe to list.
+     * @return A formatted, indexed list of modules in the recipe.
+     */
+    private String getModuleList(Recipe recipe) {
         ArrayList<Module> recipeModuleList = recipe.getModuleList();
 
         if (recipeModuleList.isEmpty()) {
@@ -49,7 +55,7 @@ public class RecipeListCommand extends Command {
         StringBuilder recipeListString = new StringBuilder();
 
         for (int index = 1; index <= recipeModuleNames.length; index++) {
-            recipeListString.append(String.format("%d. %s\n", index, recipeModuleNames[index + ARRAY_INDEX_OFFSET]));
+            recipeListString.append(String.format("  %d. %s\n", index, recipeModuleNames[index + ARRAY_INDEX_OFFSET]));
         }
 
         return recipeListString.toString();

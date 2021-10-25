@@ -64,7 +64,7 @@ class RecipeListCommandTest {
     }
 
     @Test
-    void run_listBlank_expectException() {
+    void run_listBlankNoEditingRecipe_expectException() {
         RecipeListCommand testCommand = new RecipeListCommand("");
         assertThrows(RecipeManagerException.class,
             () -> testCommand.run(dataManager, moduleManager, ui, recipeManager));
