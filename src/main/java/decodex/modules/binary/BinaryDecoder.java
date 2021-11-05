@@ -1,10 +1,11 @@
 package decodex.modules.binary;
 
-import decodex.modules.Module;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
 import decodex.data.Data;
 import decodex.data.exception.ModuleException;
+import decodex.modules.Module;
 import decodex.ui.messages.ErrorMessages;
 
 // @@author arraysius

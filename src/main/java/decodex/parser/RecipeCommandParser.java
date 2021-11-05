@@ -1,5 +1,7 @@
 package decodex.parser;
 
+import java.util.Arrays;
+
 import decodex.commands.Command;
 import decodex.commands.recipe.RecipeDeleteCommand;
 import decodex.commands.recipe.RecipeDeselectCommand;
@@ -11,7 +13,6 @@ import decodex.commands.recipe.RecipeResetCommand;
 import decodex.commands.recipe.RecipeSelectCommand;
 import decodex.data.exception.CommandException;
 import decodex.ui.messages.ErrorMessages;
-import java.util.Arrays;
 
 /**
  * The RecipeCommandParser class handles the parsing and validation of recipe commands.

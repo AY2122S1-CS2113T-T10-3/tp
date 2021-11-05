@@ -1,9 +1,9 @@
 package decodex.modules.binary;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
 import decodex.data.Data;
+
 import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class BinaryEncoderTest {
 
