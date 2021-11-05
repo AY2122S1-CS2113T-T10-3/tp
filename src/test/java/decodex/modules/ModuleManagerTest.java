@@ -1,14 +1,13 @@
 package decodex.modules;
 
-import static org.junit.jupiter.api.Assertions.assertThrows;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-
 import decodex.data.exception.ModuleException;
 import decodex.data.exception.ModuleManagerException;
 import decodex.modules.base64.Base64Encoder;
 import decodex.modules.rot.RotEncoder;
 
 import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class ModuleManagerTest {
 
