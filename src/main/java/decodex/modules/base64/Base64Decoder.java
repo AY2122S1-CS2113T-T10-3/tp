@@ -1,10 +1,11 @@
 package decodex.modules.base64;
 
+import java.util.Base64;
+
 import decodex.data.Data;
 import decodex.data.exception.ModuleException;
 import decodex.modules.Module;
 import decodex.ui.messages.ErrorMessages;
-import java.util.Base64;
 
 // @@author Kair0s3
 /**

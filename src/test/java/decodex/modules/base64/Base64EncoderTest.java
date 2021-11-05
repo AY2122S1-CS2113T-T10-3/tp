@@ -1,8 +1,8 @@
 package decodex.modules.base64;
 
 import decodex.data.Data;
-import org.junit.jupiter.api.Test;
 
+import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class Base64EncoderTest {

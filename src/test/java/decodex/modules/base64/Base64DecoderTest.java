@@ -2,8 +2,8 @@ package decodex.modules.base64;
 
 import decodex.data.Data;
 import decodex.data.exception.ModuleException;
-import org.junit.jupiter.api.Test;
 
+import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 

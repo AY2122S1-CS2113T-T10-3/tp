@@ -4,8 +4,8 @@ import java.util.Arrays;
 
 import decodex.commands.Command;
 import decodex.commands.ExitCommand;
-import decodex.commands.InputCommand;
 import decodex.commands.HelpCommand;
+import decodex.commands.InputCommand;
 import decodex.commands.ListCommand;
 import decodex.commands.ResetCommand;
 import decodex.commands.SelectCommand;
