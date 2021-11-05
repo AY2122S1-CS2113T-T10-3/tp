@@ -2,8 +2,8 @@ package decodex.parser;
 
 import java.util.Arrays;
 
-import decodex.commands.Command;
-import decodex.commands.ExitCommand;
+import decodex.logic.Command;
+import decodex.logic.commands.ExitCommand;
 import decodex.commands.HelpCommand;
 import decodex.commands.InputCommand;
 import decodex.commands.ListCommand;

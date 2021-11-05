@@ -1,8 +1,8 @@
 package decodex.parser;
 
-import decodex.commands.Command;
-import decodex.commands.recipe.RecipeDeleteCommand;
-import decodex.commands.recipe.RecipeNewCommand;
+import decodex.logic.Command;
+import decodex.logic.commands.recipe.RecipeDeleteCommand;
+import decodex.logic.commands.recipe.RecipeNewCommand;
 import decodex.commands.recipe.RecipePopCommand;
 import decodex.commands.recipe.RecipePushCommand;
 import decodex.commands.recipe.RecipeResetCommand;

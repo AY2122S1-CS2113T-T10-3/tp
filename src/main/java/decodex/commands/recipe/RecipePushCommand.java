@@ -2,7 +2,7 @@ package decodex.commands.recipe;
 
 import java.io.IOException;
 
-import decodex.commands.Command;
+import decodex.logic.Command;
 import decodex.data.DataManager;
 import decodex.data.exception.CommandException;
 import decodex.data.exception.ModuleException;

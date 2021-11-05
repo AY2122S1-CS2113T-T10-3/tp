@@ -1,14 +1,16 @@
 package decodex.commands;
 
-import decodex.commands.recipe.RecipeDeleteCommand;
+import decodex.logic.commands.recipe.RecipeDeleteCommand;
 import decodex.commands.recipe.RecipeDeselectCommand;
-import decodex.commands.recipe.RecipeListCommand;
-import decodex.commands.recipe.RecipeNewCommand;
+import decodex.logic.commands.recipe.RecipeListCommand;
+import decodex.logic.commands.recipe.RecipeNewCommand;
 import decodex.commands.recipe.RecipePopCommand;
 import decodex.commands.recipe.RecipePushCommand;
 import decodex.commands.recipe.RecipeResetCommand;
 import decodex.commands.recipe.RecipeSelectCommand;
 import decodex.data.DataManager;
+import decodex.logic.Command;
+import decodex.logic.commands.ExitCommand;
 import decodex.modules.ModuleManager;
 import decodex.recipes.RecipeManager;
 import decodex.storage.Storage;

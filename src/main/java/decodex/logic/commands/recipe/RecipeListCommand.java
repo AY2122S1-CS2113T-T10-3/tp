@@ -1,6 +1,6 @@
-package decodex.commands.recipe;
+package decodex.logic.commands.recipe;
 
-import decodex.commands.Command;
+import decodex.logic.Command;
 import decodex.data.DataManager;
 import decodex.data.exception.CommandException;
 import decodex.data.exception.ModuleException;

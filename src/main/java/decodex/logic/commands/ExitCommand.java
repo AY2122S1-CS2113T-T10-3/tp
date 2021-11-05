@@ -1,6 +1,7 @@
-package decodex.commands;
+package decodex.logic.commands;
 
 import decodex.data.DataManager;
+import decodex.logic.Command;
 import decodex.modules.ModuleManager;
 import decodex.recipes.RecipeManager;
 import decodex.storage.Storage;

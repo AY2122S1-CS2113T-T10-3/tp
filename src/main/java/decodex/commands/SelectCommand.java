@@ -8,6 +8,7 @@ import decodex.data.exception.ModuleException;
 import decodex.data.exception.ModuleManagerException;
 import decodex.data.exception.RecipeException;
 import decodex.data.exception.RecipeManagerException;
+import decodex.logic.Command;
 import decodex.modules.Module;
 import decodex.modules.ModuleManager;
 import decodex.recipes.Recipe;

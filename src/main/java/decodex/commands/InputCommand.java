@@ -3,6 +3,7 @@ package decodex.commands;
 import decodex.data.Data;
 import decodex.data.DataManager;
 import decodex.data.exception.CommandException;
+import decodex.logic.Command;
 import decodex.modules.ModuleManager;
 import decodex.recipes.RecipeManager;
 import decodex.storage.Storage;

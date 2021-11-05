@@ -4,8 +4,8 @@ import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import decodex.commands.Command;
-import decodex.commands.ExitCommand;
+import decodex.logic.Command;
+import decodex.logic.commands.ExitCommand;
 import decodex.data.DataManager;
 import decodex.data.exception.CommandException;
 import decodex.data.exception.DataManagerException;

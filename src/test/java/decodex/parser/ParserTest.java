@@ -1,7 +1,7 @@
 package decodex.parser;
 
-import decodex.commands.Command;
-import decodex.commands.ExitCommand;
+import decodex.logic.Command;
+import decodex.logic.commands.ExitCommand;
 import decodex.commands.InputCommand;
 import decodex.commands.ListCommand;
 import decodex.commands.ResetCommand;
