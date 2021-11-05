@@ -30,14 +30,14 @@ public class ErrorMessages {
     public static final String UNKNOWN_SELECTION_CATEGORY = "Unknown selection category";
     public static final String INPUT_FILE_DOES_NOT_EXIST_MESSAGE =
             "The default input file does not exists";
-    public static final String FILE_WRITE_ERROR_MESSAGE = "Something went wrong while writing result to output file";
+    public static final String RECIPE_WRITE_FAILED_MESSAGE = "Something went wrong while writing/updating recipe file";
     public static final String FILE_READ_ERROR_MESSAGE = "Something went wrong when reading from the file";
     public static final String DIRECTORY_INSTANTIATION_FAILED_MESSAGE = "Failed to create the directory for ";
     public static final String RECIPE_FILE_DELETE_FAILED_MESSAGE = "Failed to delete the corresponding recipe file";
     public static final String FAILED_TO_LOAD_RECIPES_FILE_MESSAGE = "Failed to load following recipes into Decodex:";
     public static final String INVALID_RECIPE_COMMAND = "Invalid recipe command";
     public static final String INVALID_DIRECTORY_ACCESS = "Failed to access %s directory";
-    public static final String INVALID_RECIPE_FILE = "The recipe file is not a valid file";
+    public static final String INVALID_RECIPE_FILE = "The recipe file is not a valid file or is missing";
     public static final String FAILED_TO_LIST_FILES_MESSAGE = "Something went wrong when listing files in recipe";
     public static final String TOO_MANY_ARGUMENTS_MESSAGE = "Too many arguments";
 }

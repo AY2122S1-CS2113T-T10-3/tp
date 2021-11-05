@@ -228,7 +228,7 @@ public class Storage {
             writer.write(formattedModuleList);
             writer.close();
         } catch (IOException err) {
-            throw new IOException(ErrorMessages.FILE_WRITE_ERROR_MESSAGE);
+            throw new IOException(ErrorMessages.RECIPE_WRITE_FAILED_MESSAGE);
         }
     }
 
