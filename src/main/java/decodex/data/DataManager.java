@@ -1,8 +1,9 @@
 package decodex.data;
 
+import java.util.Arrays;
+
 import decodex.data.exception.DataManagerException;
 import decodex.ui.messages.ErrorMessages;
-import java.util.Arrays;
 
 /**
  * The DataManager class handles the management of the current state of the data.
