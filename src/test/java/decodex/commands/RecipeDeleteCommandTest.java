@@ -2,6 +2,9 @@ package decodex.commands;
 
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
+import java.io.IOException;
+import org.junit.jupiter.api.Test;
+
 import decodex.commands.recipe.RecipeDeleteCommand;
 import decodex.data.DataManager;
 import decodex.data.exception.CommandException;
@@ -15,8 +18,6 @@ import decodex.recipes.Recipe;
 import decodex.recipes.RecipeManager;
 import decodex.storage.Storage;
 import decodex.ui.Ui;
-import java.io.IOException;
-import org.junit.jupiter.api.Test;
 
 class RecipeDeleteCommandTest {
 

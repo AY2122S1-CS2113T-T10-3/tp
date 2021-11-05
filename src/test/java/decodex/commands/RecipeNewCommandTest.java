@@ -3,6 +3,9 @@ package decodex.commands;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
+import java.io.IOException;
+import org.junit.jupiter.api.Test;
+
 import decodex.commands.recipe.RecipeNewCommand;
 import decodex.data.DataManager;
 import decodex.data.exception.CommandException;
@@ -15,8 +18,6 @@ import decodex.modules.ModuleManager;
 import decodex.recipes.RecipeManager;
 import decodex.storage.Storage;
 import decodex.ui.Ui;
-import java.io.IOException;
-import org.junit.jupiter.api.Test;
 
 class RecipeNewCommandTest {
 
