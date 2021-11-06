@@ -40,4 +40,5 @@ public class ErrorMessages {
     public static final String INVALID_RECIPE_FILE = "The recipe file is not a valid file or is missing";
     public static final String FAILED_TO_LIST_FILES_MESSAGE = "Something went wrong when listing files in recipe";
     public static final String TOO_MANY_ARGUMENTS_MESSAGE = "Too many arguments";
+    public static final String RECIPE_EMPTY = "There are no modules in the recipe";
 }

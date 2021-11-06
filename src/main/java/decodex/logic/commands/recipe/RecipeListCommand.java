@@ -13,6 +13,7 @@ import decodex.recipes.Recipe;
 import decodex.recipes.RecipeManager;
 import decodex.storage.Storage;
 import decodex.ui.Ui;
+import decodex.ui.messages.ErrorMessages;
 import decodex.ui.messages.RegularMessages;
 
 // @@author SeenFang
@@ -51,11 +52,11 @@ public class RecipeListCommand extends Command {
      * @param recipe The recipe to list.
      * @return A formatted, indexed list of modules in the recipe.
      */
-    private String getModuleList(Recipe recipe) {
+    private String getModuleList(Recipe recipe) throws CommandException {
         ArrayList<Module> recipeModuleList = recipe.getModuleList();
 
         if (recipeModuleList.isEmpty()) {
-            return RegularMessages.RECIPE_EMPTY;
+            throw new CommandException(ErrorMessages.RECIPE_EMPTY);
         }
 
         String[] recipeModuleNames = recipeModuleList.stream()

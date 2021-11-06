@@ -104,11 +104,6 @@ public class Ui {
      * @param recipe The provided recipe.
      */
     public void printRecipeModules(Recipe recipe) {
-        if (recipe.getModuleList().size() == 0) {
-            printSuccess(RegularMessages.RECIPE_EMPTY);
-            return;
-        }
-
         ArrayList<Module> recipeModuleList = recipe.getModuleList();
         String[] recipeModuleNames = recipeModuleList.stream()
                 .map(Module::toString)

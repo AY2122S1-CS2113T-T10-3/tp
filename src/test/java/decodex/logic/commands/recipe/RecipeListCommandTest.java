@@ -92,10 +92,10 @@ class RecipeListCommandTest {
     }
 
     @Test
-    void run_listEmptyRecipe_expectException() throws RecipeManagerException, CommandException, ModuleException {
+    void run_listEmptyRecipe_expectException() throws RecipeManagerException {
         recipeManager.getRecipe(TEST_RECIPE_NAME).reset();
         RecipeListCommand testCommand = new RecipeListCommand(TEST_RECIPE_NAME);
-        testCommand.run(dataManager, moduleManager, ui, recipeManager, storage);
-        assertFalse(outputStream.toString().isBlank());
+        assertThrows(CommandException.class,
+            () -> testCommand.run(dataManager, moduleManager, ui, recipeManager, storage));
     }
 }
