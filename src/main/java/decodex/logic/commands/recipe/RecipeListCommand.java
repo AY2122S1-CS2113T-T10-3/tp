@@ -14,7 +14,6 @@ import decodex.recipes.RecipeManager;
 import decodex.storage.Storage;
 import decodex.ui.Ui;
 import decodex.ui.messages.ErrorMessages;
-import decodex.ui.messages.RegularMessages;
 
 // @@author SeenFang
 public class RecipeListCommand extends Command {
